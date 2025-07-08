@@ -1,0 +1,72 @@
+/* container do menu */
+.menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: var(--menubar-bg);
+  color: var(--text-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* limpa bordas do tabMenu */
+::ng-deep .p-tabmenu {
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  flex-grow: 1;
+}
+
+::ng-deep .p-tabmenu-nav {
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::ng-deep .p-tabmenu-nav li {
+  position: relative;
+  margin-right: 1rem;
+}
+
+::ng-deep .p-tabmenu-nav li a {
+  color: var(--text-color);
+  padding: 0.5rem 0;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* underline dinâmica */
+::ng-deep .p-tabmenu-nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: transform 0.3s ease, width 0.3s ease;
+  transform-origin: left;
+}
+
+/* calcula posição e largura no .p-highlight */
+::ng-deep .p-tabmenu-nav li.p-highlight a {
+  color: var(--primary-color);
+}
+
+::ng-deep .p-tabmenu-nav li.p-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}

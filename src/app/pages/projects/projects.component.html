@@ -1,0 +1,9 @@
+<div class="grid m-4">
+  <div class="col-12 md:col-4" *ngFor="let project of projects">
+    <p-card [header]="project.name" [subheader]="project.description">
+      <ng-template pTemplate="footer">
+        <a [href]="project.link" target="_blank">Ver Projeto</a>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
