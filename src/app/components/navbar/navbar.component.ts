@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule } from '@angular/forms';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-navbar',
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     MenubarModule,
     InputSwitchModule,
     FormsModule,
+    CardModule
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
@@ -40,10 +42,10 @@ export class NavbarComponent {
   }
 
   updateSlider(index: number) {
-    // pega o elemento da aba ativa
     const tabs = this.tabMenu.nativeElement.querySelectorAll(
       '.p-tabmenu-nav > li'
     );
+
     if (!tabs || tabs.length === 0) return;
 
     const activeTab = tabs[index];

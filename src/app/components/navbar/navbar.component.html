@@ -1,16 +1,40 @@
 <div class="card">
   <div class="menu-wrapper">
-      <p-menubar [model]="items" />
+      <p-menubar #tabMenu
+        [model]="items"
+        class="menu"
+        (onTabChange)="onTabChange($event)" />
+
         <div class="actions">
-        <div>
-          <a
-            href="assets/curriculo_wellington.pdf"
-            download="Curriculo_Wellington.pdf"
-            rel="noopener noreferrer"
-          >
-            <p-button label="Curriculo" icon="pi pi-file-pdf" />
-          </a>
-        </div>
+          <div>
+            <a
+              href="assets/curriculo_wellington.pdf"
+              download="Curriculo_Wellington.pdf"
+              rel="noopener noreferrer"
+            >
+              <p-button label="Curriculo" icon="pi pi-file-pdf" />
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="https://github.com/WellingtonVXavier"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <p-button label="GitHub" icon="pi pi-github" />
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="https://www.linkedin.com/in/wellington-vaz-xavier-091809220/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <p-button label="LinkedIn" icon="pi pi-linkedin" />
+            </a>
+          </div>
       </div>
   </div>
 </div>
