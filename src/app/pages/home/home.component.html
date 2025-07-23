@@ -1,7 +1,7 @@
 <div class="container">
   <p-card header="Minhas Habilidades" class="mb-4 header" [style]="{width: '1377px'}">
     <img
-      src="assets/wellington.webp"
+      src="assets/wellington.png"
       alt="Minha foto"
       class="profile-pic"
       (click)="showModal = true"
@@ -15,7 +15,7 @@
   <!-- Modal foto -->
   <div class="photo-modal" *ngIf="showModal" (click)="showModal = false">
     <div class="modal-content" (click)="$event.stopPropagation()">
-      <img src="assets/wellington.webp" alt="Minha foto grande" />
+      <img src="assets/wellington.png" alt="Minha foto grande" />
     </div>
   </div>
 
