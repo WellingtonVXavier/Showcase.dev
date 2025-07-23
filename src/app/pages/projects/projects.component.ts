@@ -61,5 +61,11 @@ export class ProjectsComponent {
         'Jogo Robotron no qual você controla um robô e ajusta seus atributos em tempo real, interagindo com uma interface dinâmica para medir e personalizar suas habilidades.',
       link: 'https://robotron-2000-chi-nine.vercel.app/',
     },
+    {
+      name: 'Cards',
+      description:
+        'Este projeto é uma aplicação Angular que permite ao usuário criar, gerenciar e interagir com "cards" personalizados, cada um representando uma entidade com um arquivo associado.',
+      link: 'cards-pink-pi.vercel.app/',
+    },
   ];
 }
