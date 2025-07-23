@@ -3,11 +3,21 @@ import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, MenubarModule, ButtonModule, TabMenuModule],
+  imports: [
+    CommonModule,
+    MenubarModule,
+    ButtonModule,
+    TabMenuModule,
+    MenubarModule,
+    InputSwitchModule,
+    FormsModule,
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -15,24 +25,9 @@ export class NavbarComponent {
   @ViewChild('tabMenu', { read: ElementRef }) tabMenu!: ElementRef;
   items = [
     { label: 'Home', routerLink: '/' },
-    { label: 'Sobre mim', routerLink: '/about' },
     { label: 'Projetos', routerLink: '/projects' },
   ];
-
-  dark = false;
   sliderStyle: any = {};
-
-  toggleDark() {
-    this.dark = !this.dark;
-    const body = document.body;
-    if (this.dark) {
-      body.classList.add('dark');
-      body.classList.remove('light');
-    } else {
-      body.classList.add('light');
-      body.classList.remove('dark');
-    }
-  }
 
   ngAfterViewInit() {
     setTimeout(() => {

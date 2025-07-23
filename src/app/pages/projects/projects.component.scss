@@ -1,0 +1,69 @@
+.projects-grid p-fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.projects-grid p-fieldset:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects-grid > div {
+  width: 100%;
+}
+
+.project-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid #25d366;
+  background: transparent;
+  color: #25d366;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.project-btn i {
+  color: #25d366;
+}
+
+.project-btn a {
+  color: #25d366;
+  text-decoration: none;
+}
+
+.project-btn:hover {
+  background: #25d366;
+  color: white;
+}
+
+.project-btn:hover a,
+.project-btn:hover i {
+  color: white;
+}

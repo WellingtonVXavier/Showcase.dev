@@ -4,13 +4,17 @@
   min-height: 300px;
 }
 
+.header {
+  display: flex;
+}
+
 .profile-pic {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  top: 2.39rem;
+  right: 2.5rem;
+  width: 150px;
+  height: 165px;
+  border-radius: 5px;
   object-fit: cover;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
@@ -21,7 +25,7 @@
 }
 
 .info {
-  margin-top: 100px; /* deixa espaço para a foto */
+  margin-top: 100px;
 }
 
 .skills {
@@ -43,10 +47,77 @@
   line-height: 1.6;
 }
 
-h2{
-    text-align: start;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+h2 {
+  text-align: start;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.contact-btn {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.contato {
+  position: fixed;
+  bottom: 1rem;
+  right: 1.9rem;
+  padding: 1rem;
+  background-color: #1f2937;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 800px;
+  font-size: 0.95rem;
+  z-index: 1000;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contato span {
+  flex: 1;
+  line-height: 1.4;
+}
+
+
+/* Modal overlay */
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Conteúdo do modal */
+.photo-modal .modal-content {
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Foto grande */
+.photo-modal img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
 /* Responsivo para telas pequenas */

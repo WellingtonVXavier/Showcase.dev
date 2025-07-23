@@ -1,9 +1,14 @@
-<div class="grid m-4">
-  <div class="col-12 md:col-4" *ngFor="let project of projects">
-    <p-card [header]="project.name" [subheader]="project.description">
-      <ng-template pTemplate="footer">
-        <a [href]="project.link" target="_blank">Ver Projeto</a>
-      </ng-template>
-    </p-card>
+<div class="projects-grid">
+  <div *ngFor="let project of projects" class="flex justify-content-center">
+    <p-fieldset [legend]="project.name" >
+      <span>{{ project.description }}</span>
+
+      <div class="footer">
+        <button class="project-btn">
+          <i class="pi pi-globe"></i>
+          <a [href]="project.link" target="_blank">Acessar Projeto</a>
+        </button>
+      </div>
+    </p-fieldset>
   </div>
 </div>
