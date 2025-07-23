@@ -14,7 +14,7 @@ import { FieldsetModule } from 'primeng/fieldset';
 export class ProjectsComponent {
   projects = [
     {
-      name: 'Número secreto',
+      name: 'Número Secreto',
       description:
         'Este é um simples jogo de adivinhação onde o jogador tenta descobrir os números sorteados pelo sistema. O jogo oferece feedback visual e textual para indicar se o jogador acertou ou errou, tornando-o divertido e intuitivo.',
       link: 'https://numero-secreto-blond.vercel.app/',
