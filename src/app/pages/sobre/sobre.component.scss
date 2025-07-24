@@ -22,6 +22,11 @@
   object-fit: cover;
   cursor: pointer;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sobre-foto:hover {
+  transform: scale(1.05);
 }
 
 .sobre-info {
@@ -58,10 +63,6 @@
   height: 600px;
   object-fit: cover;
   border-radius: 50%;
-}
-
-.sobre-foto:hover {
-  transform: scale(1.05);
 }
 
 .contato {
