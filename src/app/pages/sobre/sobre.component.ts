@@ -5,12 +5,12 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-sobre',
   standalone: true,
   imports: [CommonModule, FormsModule, CardModule, ButtonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  templateUrl: './sobre.component.html',
+  styleUrl: './sobre.component.scss',
 })
-export class HomeComponent {
-
+export class SobreComponent {
+  showModal = false;
 }
