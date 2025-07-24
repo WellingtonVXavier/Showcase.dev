@@ -1,32 +1,49 @@
+
+
+
 <div class="container">
-  <p-card header="Minhas Habilidades" class="mb-4 header" [style]="{width: '1377px'}">
-    <p class="skills">
-      Full Stack Junior Developer | .NET | Entity Framework Core 8.0 | Typescript | JavaScript | Angular |
-      SQL Server | Git
-    </p>
-  </p-card>
+    <p-card header="Sobre Mim" class="mb-4 header" [style]="{width: '1377px'}">
+        <div class="sobre-container">
+            <img src="assets/wellington.png" (click)="showModal = true" alt="Minha foto" class="sobre-foto" />
 
-  <p-card header="Habilidades Técnicas" class="mb-4">
+            <div class="sobre-info">
+                <h2>Wellington Vaz Xavier</h2>
+                <p><strong>Idade:</strong> 38 anos</p>
+                <p><strong>Formação:</strong> Tecnólogo em Análise e Desenvolvimento de Sistemas — cursando o 3º semestre</p>
+                <p><strong>Cidade:</strong> São Paulo - SP</p>
+                <p><strong>Resumo:</strong> Desenvolvedor Júnior apaixonado por tecnologia, focado em soluções web com .NET, Angular, TypeScript e SQL Server. Buscando sempre aprendizado contínuo e desafios.</p>
+            </div>
+        </div>
 
-    <div class="about">
-      <p>
-        Desenvolvedor Júnior e Analista de Sistemas com experiência no
-        gerenciamento de tickets e desenvolvimento de soluções personalizadas.
-        Responsável por tratar e resolver tickets abertos por áreas internas,
-        facilitando a comunicação entre setores e a equipe de desenvolvimento.
-      </p>
+        <div class="contato">
+            <span>Transforme sua ideia em um projeto digital de sucesso. Fale comigo!</span>
+            <a href="mailto:toomvxavier@outlook.com" class="contact-btn">
+                <i class="pi pi-envelope"  style="color: #b3b3b3; font-size: 25px; text-transform: none;"></i>
+            </a>
 
-      <p>
-        Recentemente, comecei a desenvolver novos sistemas para melhorar
-        processos e a eficiência do portal da empresa, sempre sob a orientação
-        de desenvolvedores mais experientes.
-      </p>
+            <div class="actions">
+                <div>
+                    <a
+                    href="https://api.whatsapp.com/send?phone=5511919404938&text=Olá%20Lucas,%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                        <i
+                        class="pi pi-whatsapp"
+                        style="color: #25d366; font-size: 25px"
+                        pTooltip="Whatsapp"
+                        tooltipPosition="left" 
+                        ></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </p-card>
 
-      <p>
-        Proficiente na análise de problemas, implementação de soluções e
-        desenvolvimento de software utilizando tecnologias como C#, JavaScript,
-        TypeScript, Angular e SQL Server.
-      </p>
+    <!-- Modal foto -->
+    <div class="photo-modal" *ngIf="showModal" (click)="showModal = false">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <img src="assets/wellington.png" alt="Minha foto grande" />
+        </div>
     </div>
-  </p-card>
 </div>

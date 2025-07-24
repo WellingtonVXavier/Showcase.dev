@@ -26,8 +26,8 @@ import { CardModule } from 'primeng/card';
 export class NavbarComponent {
   @ViewChild('tabMenu', { read: ElementRef }) tabMenu!: ElementRef;
   items = [
-    { label: 'Sobre', routerLink: '/'},
-    { label: 'Home', routerLink: 'home' },
+    { label: 'Home', routerLink: '/' },
+    { label: 'Sobre', routerLink: 'sobre'},
     { label: 'Projetos', routerLink: '/projects' }
   ];
   sliderStyle: any = {};

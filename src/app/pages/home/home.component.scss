@@ -4,76 +4,88 @@
   min-height: 300px;
 }
 
+.sobre-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 .header {
   display: flex;
 }
 
-.profile-pic {
-  position: absolute;
-  top: 2.39rem;
-  right: 2.5rem;
+.sobre-foto {
   width: 150px;
   height: 165px;
   border-radius: 5px;
   object-fit: cover;
+  cursor: pointer;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
-.profile-pic:hover {
+.sobre-foto:hover {
   transform: scale(1.05);
 }
 
-.info {
-  margin-top: 100px;
-}
-
-.skills {
-  text-align: left;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+.sobre-info {
+  flex: 1;
   font-size: 1rem;
-}
-
-.about {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.about p {
-  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
-h2 {
-  text-align: start;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.contact-btn {
+/* Modal overlay */
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-/* Responsivo para telas pequenas */
-@media (max-width: 600px) {
-  .profile-pic {
-    width: 60px;
-    height: 60px;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
+/* Conteúdo do modal */
+.photo-modal .modal-content {
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .info {
-    margin-top: 80px;
-  }
+/* Foto grande */
+.photo-modal img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
-  .skills {
-    text-align: center;
-  }
+.contato {
+  position: fixed;
+  bottom: 1rem;
+  right: 1.9rem;
+  padding: 1rem;
+  background-color: #1f2937;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 800px;
+  font-size: 0.95rem;
+  z-index: 1000;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contato span {
+  flex: 1;
+  line-height: 1.4;
 }

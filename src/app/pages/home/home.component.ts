@@ -12,5 +12,5 @@ import { CardModule } from 'primeng/card';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  showModal = false;
 }

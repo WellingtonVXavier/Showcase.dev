@@ -12,5 +12,5 @@ import { CardModule } from 'primeng/card';
   styleUrl: './sobre.component.scss',
 })
 export class SobreComponent {
-  showModal = false;
+
 }
