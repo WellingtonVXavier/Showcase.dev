@@ -89,3 +89,32 @@ a {
   flex: 1;
   line-height: 1.4;
 }
+
+.actions {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+
+  i {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .pdf-btn {
+    background-color: #d32f2f;
+  }
+
+  .github-btn {
+    background-color: #000;
+  }
+
+  .linkedin-btn {
+    background-color: #0077b5;
+  }
+}
+

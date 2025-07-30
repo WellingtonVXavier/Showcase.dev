@@ -1,6 +1,3 @@
-
-
-
 <div class="container">
     <p-card header="Sobre Mim" class="mb-4 header" [style]="{width: '1377px'}">
         <div class="sobre-container">
@@ -14,6 +11,25 @@
                 <p><strong>Resumo:</strong> Desenvolvedor Júnior apaixonado por tecnologia, focado em soluções web com .NET, Angular, TypeScript e SQL Server. Buscando sempre aprendizado contínuo e desafios.</p>
             </div>
         </div>
+
+        <div class="actions">
+        <i 
+            class="pi pi-file-pdf pdf-btn" 
+            (click)="downloadPdf()" 
+            style="font-size: 1.5rem; cursor: pointer;"></i>
+
+        <i 
+            class="pi pi-github github-btn" 
+            (click)="abrirLink('https://github.com/WellingtonVXavier')" 
+            style="font-size: 1.5rem; cursor: pointer;"></i>
+
+        <i 
+            class="pi pi-linkedin linkedin-btn" 
+            (click)="abrirLink('https://www.linkedin.com/in/wellington-vaz-xavier-091809220/')" 
+            style="font-size: 1.5rem; cursor: pointer;"></i>
+        </div>
+
+
 
         <div class="contato">
             <span>Transforme sua ideia em um projeto digital de sucesso. Fale comigo!</span>

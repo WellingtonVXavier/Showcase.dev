@@ -1,40 +1,13 @@
 <div class="card">
-  <div class="menu-wrapper">
-      <p-menubar #tabMenu
-        [model]="items"
-        class="menu"
-        (onTabChange)="onTabChange($event)" />
+  <p-tabMenu 
+    [model]="items"
+    [(activeItem)]="activeItem"
+    class="menu-centralizado"
+    />
+</div>
 
-        <div class="actions">
-          <div>
-            <a
-              href="assets/curriculo_wellington.pdf"
-              download="Curriculo_Wellington.pdf"
-              rel="noopener noreferrer"
-            >
-              <p-button label="Curriculo" icon="pi pi-file-pdf" />
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="https://github.com/WellingtonVXavier"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <p-button label="GitHub" icon="pi pi-github" />
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="https://www.linkedin.com/in/wellington-vaz-xavier-091809220/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <p-button label="LinkedIn" icon="pi pi-linkedin" />
-            </a>
-          </div>
-      </div>
-  </div>
+<div class="card slider">
+  <app-home *ngIf="activeItem?.id === 'home'"></app-home>
+  <app-sobre *ngIf="activeItem?.id === 'sobre'"></app-sobre>
+  <app-projects *ngIf="activeItem?.id === 'projetos'"></app-projects>
 </div>

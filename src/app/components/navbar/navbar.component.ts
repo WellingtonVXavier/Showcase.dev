@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
@@ -6,56 +6,40 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule } from '@angular/forms';
 import { CardModule } from 'primeng/card';
+import { Router } from '@angular/router';
+import { HomeComponent } from "../../pages/home/home.component";
+import { SobreComponent } from '../../pages/sobre/sobre.component';
+import { ProjectsComponent } from '../../pages/projects/projects.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
     CommonModule,
-    MenubarModule,
     ButtonModule,
     TabMenuModule,
-    MenubarModule,
-    InputSwitchModule,
     FormsModule,
-    CardModule
-  ],
+    CardModule,
+    HomeComponent,
+    SobreComponent,
+    ProjectsComponent
+],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {
-  @ViewChild('tabMenu', { read: ElementRef }) tabMenu!: ElementRef;
-  items = [
-    { label: 'Home', routerLink: '/' },
-    { label: 'Sobre', routerLink: 'sobre'},
-    { label: 'Projetos', routerLink: '/projects' }
-  ];
-  sliderStyle: any = {};
+export class NavbarComponent implements OnInit {
+  items: any[] = [];
+ activeItem: any;
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.updateSlider(0);
-    });
-  }
 
-  onTabChange(event: any) {
-    this.updateSlider(event.index);
-  }
+  constructor(private router: Router) {}
+  ngOnInit() {
+    this.items = [
+      { label: 'Home', id: 'home', icon: 'pi pi-fw pi-home' },
+      { label: 'Sobre', id: 'sobre', icon: 'pi pi-fw pi-info-circle' },
+      { label: 'Projetos',  id: 'projetos', icon: 'pi pi-fw pi-briefcase' },
+    ];
 
-  updateSlider(index: number) {
-    const tabs = this.tabMenu.nativeElement.querySelectorAll(
-      '.p-tabmenu-nav > li'
-    );
-
-    if (!tabs || tabs.length === 0) return;
-
-    const activeTab = tabs[index];
-    const left = activeTab.offsetLeft;
-    const width = activeTab.offsetWidth;
-
-    this.sliderStyle = {
-      left: `${left}px`,
-      width: `${width}px`,
-    };
+    this.activeItem = this.items[0];
   }
 }
