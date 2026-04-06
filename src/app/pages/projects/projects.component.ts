@@ -9,14 +9,14 @@ import { FieldsetModule } from 'primeng/fieldset';
   standalone: true,
   imports: [CommonModule, CardModule, ButtonModule, FieldsetModule],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss',
+  styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
   projects = [
     {
-      name: 'Número Secreto',
-      description:
-        'Este é um simples jogo de adivinhação onde o jogador tenta descobrir os números sorteados pelo sistema. O jogo oferece feedback visual e textual para indicar se o jogador acertou ou errou, tornando-o divertido e intuitivo.',
+     name: 'Número Secreto',
+      description: 
+      'Número Secreto é um jogo de adivinhação interativo em que o jogador utiliza o microfone para informar seus palpites. O sistema fornece feedback visual e textual imediato, indicando se o número informado está correto, tornando a experiência intuitiva e divertida.',
       link: 'https://numero-secreto-blond.vercel.app/',
     },
     {
@@ -65,7 +65,7 @@ export class ProjectsComponent {
       name: 'Cards',
       description:
         'Este projeto é uma aplicação Angular que permite ao usuário criar, gerenciar e interagir com "cards" personalizados, cada um representando uma entidade com um arquivo associado.',
-      link: 'cards-pink-pi.vercel.app/',
+      link: 'https://cards-pink-pi.vercel.app/',
     },
   ];
 }

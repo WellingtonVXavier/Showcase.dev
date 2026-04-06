@@ -1,3 +1,50 @@
+
+
+::ng-deep .p-tablist {
+  background: transparent;
+  border-bottom: 1px solid #374151;
+  display: flex;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+::ng-deep .p-tab {
+  background: transparent;
+  color: #9ca3af;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+::ng-deep .p-tab:hover,
+::ng-deep .p-tab:hover * {
+  color: #e5e7eb !important;
+}
+
+::ng-deep .p-tab.p-highlight {
+  color: #22c55e;
+  background: #111827;
+  border-bottom: 2px solid #22c55e;
+  position: relative;
+}
+
+::ng-deep .p-tab.p-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #22c55e;
+}
+
+::ng-deep .p-tabpanels {
+  background: transparent;
+  padding: 15px;
+}
+
 .menu-wrapper {
   position: relative;
   display: flex;
@@ -14,16 +61,14 @@
   margin-left: 17px;
 }
 
-
-
 .theme-toggle .p-inputswitch {
-  width: 60px; /* aumenta para caber o ícone */
+  width: 60px;
   height: 30px;
 }
 
 .theme-toggle .p-inputswitch-slider:before {
-  content: "\f185"; /* ícone sol */
-  font-family: "Font Awesome 6 Free"; /* ou outra fonte de ícones */
+  content: "\f185"; /* sol */
+  font-family: "Font Awesome 6 Free";
   font-weight: 900;
   position: absolute;
   left: 5px;
@@ -34,8 +79,15 @@
 }
 
 .theme-toggle .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
-  content: "\f186"; /* ícone lua */
+  content: "\f186"; /* lua */
   color: #90caf9;
 }
 
-
+.menu {
+  display: flex;
+  gap: 15px;
+  background-color: #111827;
+  border: 1px solid #111827;
+  border-radius: 6px;
+  padding: 5px 10px;
+}

@@ -1,13 +1,32 @@
 import { bootstrapApplication } from '@angular/platform-browser';
+import { providePrimeNG } from 'primeng/config';
 import { AppComponent } from './app/app.component';
-import { provideRouter } from '@angular/router';
-import { routes } from './app/app.routes';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes),
-    importProvidersFrom(BrowserAnimationsModule),
-  ],
+    providePrimeNG({
+      ripple: true,
+      zIndex: {
+        modal: 1100,
+        overlay: 1000,
+        menu: 1000,
+        tooltip: 1100
+      },
+      translation: {
+        firstDayOfWeek: 0,
+        dayNames: ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'],
+        dayNamesShort: ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'],
+        dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+        monthNames: [
+          'janeiro','fevereiro','março','abril','maio','junho',
+          'julho','agosto','setembro','outubro','novembro','dezembro'
+        ],
+        monthNamesShort: ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'],
+        today: 'Hoje',
+        clear: 'Limpar',
+        dateFormat: 'dd/mm/yy',
+        weekHeader: 'Sm'
+      }
+    })
+  ]
 });

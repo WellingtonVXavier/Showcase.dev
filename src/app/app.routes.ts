@@ -4,8 +4,9 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent }, // home rota raiz
-  { path: '**', redirectTo: '', pathMatch: 'full' }, // redireciona para home em rota inválida
-  { path: 'sobre', component: SobreComponent },// sobre
-  { path: 'projects', component: ProjectsComponent } // projetos
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'sobre', component: SobreComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

@@ -1,13 +1,30 @@
-<div class="card">
-  <p-tabMenu 
-    [model]="items"
-    [(activeItem)]="activeItem"
-    class="menu-centralizado"
-    />
-</div>
+<p-tabs [(value)]="activeItem" class="card">
+  <p-tablist>
+    <p-tab class="menu" value="home">
+      <i class="pi pi-home"></i> 
+      Home
+    </p-tab>
+    <p-tab class="menu" value="sobre">
+      <i class="pi pi-info-circle"></i> 
+      Sobre
+    </p-tab>
+    <p-tab class="menu" value="projetos">
+      <i class="pi pi-briefcase"></i> 
+      Projetos
+    </p-tab>
+  </p-tablist>
+  
+  <p-tabpanels>
+    <p-tabpanel value="home">
+      <app-home></app-home>
+    </p-tabpanel>
 
-<div class="card slider">
-  <app-home *ngIf="activeItem?.id === 'home'"></app-home>
-  <app-sobre *ngIf="activeItem?.id === 'sobre'"></app-sobre>
-  <app-projects *ngIf="activeItem?.id === 'projetos'"></app-projects>
-</div>
+    <p-tabpanel value="sobre">
+      <app-sobre></app-sobre>
+    </p-tabpanel>
+
+    <p-tabpanel value="projetos">
+      <app-projects></app-projects>
+    </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>

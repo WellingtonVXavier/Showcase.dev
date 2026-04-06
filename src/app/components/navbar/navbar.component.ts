@@ -1,11 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
-import { TabMenuModule } from 'primeng/tabmenu';
-import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule } from '@angular/forms';
 import { CardModule } from 'primeng/card';
+import { TabsModule } from 'primeng/tabs';
 import { Router } from '@angular/router';
 import { HomeComponent } from "../../pages/home/home.component";
 import { SobreComponent } from '../../pages/sobre/sobre.component';
@@ -17,29 +16,30 @@ import { ProjectsComponent } from '../../pages/projects/projects.component';
   imports: [
     CommonModule,
     ButtonModule,
-    TabMenuModule,
+    TabsModule,
     FormsModule,
     CardModule,
     HomeComponent,
     SobreComponent,
-    ProjectsComponent
-],
+    ProjectsComponent,
+    MenubarModule
+  ],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss',
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
   items: any[] = [];
- activeItem: any;
+  activeItem: string = 'home';
 
 
   constructor(private router: Router) {}
   ngOnInit() {
-    this.items = [
-      { label: 'Home', id: 'home', icon: 'pi pi-fw pi-home' },
-      { label: 'Sobre', id: 'sobre', icon: 'pi pi-fw pi-info-circle' },
-      { label: 'Projetos',  id: 'projetos', icon: 'pi pi-fw pi-briefcase' },
+   this.items = [
+    { label: 'Home', id: 'home', icon: 'pi pi-fw pi-home' },
+    { label: 'Sobre', id: 'sobre', icon: 'pi pi-fw pi-info-circle' },
+    { label: 'Projetos', id: 'projetos', icon: 'pi pi-fw pi-briefcase' }
     ];
 
-    this.activeItem = this.items[0];
+    this.router.navigate(['/home']);
   }
 }

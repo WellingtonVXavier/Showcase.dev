@@ -9,7 +9,7 @@ import { CardModule } from 'primeng/card';
   standalone: true,
   imports: [CommonModule, FormsModule, CardModule, ButtonModule],
   templateUrl: './sobre.component.html',
-  styleUrl: './sobre.component.scss',
+  styleUrls: ['./sobre.component.scss'],
 })
 export class SobreComponent {
 

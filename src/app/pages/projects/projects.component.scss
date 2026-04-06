@@ -3,32 +3,47 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
-  box-sizing: border-box;
+
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 8px;
+
+  padding: 16px;
+  margin: 8px 0;
+
+  transition: all 0.3s ease;
 }
 
-.projects-grid p-fieldset:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+::ng-deep .p-fieldset .p-fieldset-legend {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #ffffff;
+  border: 2px solid #22c55e;
+  border-radius: 6px;
+
+  padding: 6px 14px;
+  font-weight: 600;
+
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
 }
 
-.projects-grid > div {
-  width: 100%;
+::ng-deep .p-fieldset-legend .p-fieldset-toggler {
+  color: #22c55e;
 }
 
-.project-card {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+::ng-deep .p-fieldset .p-fieldset-legend,
+::ng-deep .p-fieldset .p-fieldset-legend * {
+  color: #ffffff !important;
+      margin-left: 5px;
 }
 
-.project-card:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.description {
+  color: #d1d5db;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.footer {
+  margin-top: 16px;
 }
 
 .project-btn {
@@ -36,34 +51,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border: 2px solid #25d366;
-  background: transparent;
-  color: #25d366;
-  cursor: pointer;
-  border-radius: 4px;
+  gap: 8px;
+
+  padding: 8px;
+  color: #22c55e;
+
+  border-radius: 6px;
   text-decoration: none;
   font-size: 1rem;
+
   transition: all 0.3s ease;
-  margin-top: 1rem;
 }
 
+/* Ícone */
 .project-btn i {
-  color: #25d366;
-}
-
-.project-btn a {
-  color: #25d366;
-  text-decoration: none;
+  color: inherit;
 }
 
 .project-btn:hover {
-  background: #25d366;
-  color: white;
-}
-
-.project-btn:hover a,
-.project-btn:hover i {
-  color: white;
+  background: #22c55e;
+  color: #fff;
+  transform: scale(1.01);
+  font-size: 19px;
 }

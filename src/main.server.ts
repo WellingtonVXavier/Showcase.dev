@@ -1,7 +1,16 @@
 import { bootstrapApplication } from '@angular/platform-browser';
+import { provideServerRendering } from '@angular/platform-server';
 import { AppComponent } from './app/app.component';
-import { config } from './app/app.config.server';
+import { BootstrapContext } from '@angular/platform-browser';
 
-const bootstrap = () => bootstrapApplication(AppComponent, config);
-
-export default bootstrap;
+export default function bootstrap(context: BootstrapContext) {
+  return bootstrapApplication(
+    AppComponent,
+    {
+      providers: [
+        provideServerRendering()
+      ]
+    },
+    context
+  );
+}

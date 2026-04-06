@@ -9,7 +9,7 @@ import { CardModule } from 'primeng/card';
   standalone: true,
   imports: [CommonModule, FormsModule, CardModule, ButtonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
   showModal = false;
@@ -20,8 +20,11 @@ export class HomeComponent {
 
   downloadPdf() {
     const link = document.createElement('a');
-    link.href = 'assets/curriculo_wellington.pdf';
-    link.download = 'Curriculo_Wellington.pdf';
+    link.href = 'assets/curriculowellington.pdf';
+    link.download = 'CurriculoWellington.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   }
 }
