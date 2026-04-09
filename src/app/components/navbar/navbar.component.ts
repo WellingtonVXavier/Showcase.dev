@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { HomeComponent } from "../../pages/home/home.component";
 import { SobreComponent } from '../../pages/sobre/sobre.component';
 import { ProjectsComponent } from '../../pages/projects/projects.component';
+import { History } from '../../pages/history/history';
 
 @Component({
   selector: 'app-navbar',
@@ -22,6 +23,7 @@ import { ProjectsComponent } from '../../pages/projects/projects.component';
     HomeComponent,
     SobreComponent,
     ProjectsComponent,
+    History,
     MenubarModule
   ],
   templateUrl: './navbar.component.html',
@@ -34,12 +36,6 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router: Router) {}
   ngOnInit() {
-   this.items = [
-    { label: 'Home', id: 'home', icon: 'pi pi-fw pi-home' },
-    { label: 'Sobre', id: 'sobre', icon: 'pi pi-fw pi-info-circle' },
-    { label: 'Projetos', id: 'projetos', icon: 'pi pi-fw pi-briefcase' }
-    ];
-
     this.router.navigate(['/home']);
   }
 }

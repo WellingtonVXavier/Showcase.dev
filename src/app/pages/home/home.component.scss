@@ -1,190 +1,158 @@
-.container {
+/* Fundo Geral */
+.main-container {
+  background: linear-gradient(180deg, #1a052e 0%, #0d0118 100%);
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+}
+
+/* Hero Section Unificada */
+.hero-section {
   position: relative;
-}
-
-.titulo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-  margin: 1rem;
-}
-
-.sobre-container {
+  padding: 1rem 0; /* Aumentei um pouco o respiro */
+  min-height: 450px;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  color: aliceblue;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.header {
-  display: flex;
-  background: #1f2937;
-  border-radius: 6px;
-  height: 350px;
+.hero-section h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-.sobre-foto {
-  width: 150px;
-  height: 165px;
-  border-radius: 5px;
-  margin-left: 15px;
-  object-fit: cover;
-  cursor: pointer;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
+.hero-section h1 span {
+  color: #bc13fe;
+  text-shadow: 0 0 20px rgba(188, 19, 254, 0.8);
 }
 
-.sobre-foto:hover {
-  transform: scale(1.05);
+.subtitle {
+  font-size: 1.6rem;
+  margin: 10px 0;
+  color: #e5e7eb;
 }
 
-.sobre-info {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
+.tagline {
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 1.1rem;
 }
 
-/* Modal overlay */
-.photo-modal {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+/* Brilho da Nebulosa */
+.nebula-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 450px;
+    background: radial-gradient(
+        circle, 
+        rgba(188, 19, 254, 0.25) 0%, 
+        rgba(138, 43, 226, 0.1) 45%, 
+        transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    animation: nebulaPulse 12s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaPulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ícones Sociais */
+.social-icons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Conteúdo do modal */
-.photo-modal .modal-content {
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 90vw;
-  max-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Foto grande */
-.photo-modal img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.contato {
-  position: fixed;
-  bottom: 1rem;
-  right: 1.9rem;
-  padding: 1rem;
-  background-color: #1f2937;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  max-width: 800px;
-  font-size: 0.95rem;
-  z-index: 1000;
-  span{
-    color: aliceblue;
-  }
-}
-
-a {
-  text-decoration: none;
-}
-
-.contato span {
-  flex: 1;
-  line-height: 1.4;
-}
-
-.actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-right: 15px;
+  gap: 20px;
+  margin-top: 30px;
 
   i {
-    width: 2.8rem;
-    height: 2.8rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
-  }
-
-  .pdf-btn {
-    background-color: #d32f2f;
-    margin-top: 25px;
-    border: 1px solid #333;
-
-    &:hover {
-      background-color: #b71c1c;
-      transform: scale(1.2);
-    }
-  }
-
-  .github-btn {
-    background-color: #000;
-    margin-top: 25px;
-    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(188, 19, 254, 0.3);
+    padding: 15px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: #fff;
 
     &:hover {
-      background-color: #333;
-      transform: scale(1.2);
-    }
-  }
-
-  .linkedin-btn {
-    background-color: #0077b5;
-    margin-top: 25px;
-    border: 1px solid #333;
-
-    &:hover {
-      background-color: #005582;
-      transform: scale(1.2);
+      background: #bc13fe;
+      box-shadow: 0 0 20px #bc13fe;
+      transform: translateY(-5px);
+      border-color: #fff;
     }
   }
 }
 
-.contato {
-  span {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
+/* Seção de Habilidades */
+.skills-section h2 {
+  font-size: 2.2rem;
+  margin: 4rem 0 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.skill-card {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Forçar os ícones do DevIcon a serem roxos */
+  i {
+    font-size: 3.5rem;
+    color: #bc13fe; 
+    transition: all 0.3s ease;
   }
 
-  .contact-btn,
-  .actions a {
-    display: inline-block;
-    margin-right: 10px;
-    transition: transform 0.2s, color 0.2s;
-    
+  .skill-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #d1d5db;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    border-color: #bc13fe;
+    background: rgba(188, 19, 254, 0.05);
+    box-shadow: 0 0 25px rgba(188, 19, 254, 0.3);
+    transform: translateY(-10px);
+
     i {
-      font-size: 25px;
-      color: inherit;
+      transform: scale(1.1);
+      text-shadow: 0 0 15px #bc13fe;
     }
-
-    &:hover i {
-      color: #ff6600; // cor ao passar o mouse
-      transform: scale(1.2); // aumenta o ícone levemente
+    
+    .skill-name {
+        color: #fff;
     }
-  }
-
-  .contact-btn i {
-    color: #7f7e7e; // cor inicial do envelope
-  }
-
-  .actions a i {
-    color: #25d366; // cor inicial do WhatsApp
   }
 }

@@ -1,0 +1,26 @@
+<div class="history-container">
+    <div class="titulo-container">
+        <span class="glow-line"></span>
+        <h2 class="titulo-moderno">Minha Evolução</h2>
+        <span class="glow-line"></span>
+    </div>
+
+    <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="marker" let-event>
+            <span class="custom-marker" [style.backgroundColor]="event.color">
+                <i [class]="event.icon"></i>
+            </span>
+        </ng-template>
+        
+        <ng-template pTemplate="content" let-event>
+            <div class="event-card">
+                <h3 class="event-status">{{event.status}}</h3>
+                <span class="event-date-mobile">{{event.date}}</span>
+                <p class="event-description">{{event.description}}</p>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="opposite" let-event>
+            <span class="event-date">{{event.date}}</span>
+        </ng-template>
+    </p-timeline>

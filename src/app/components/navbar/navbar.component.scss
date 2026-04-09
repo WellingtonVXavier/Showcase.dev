@@ -1,93 +1,90 @@
-
-
-::ng-deep .p-tablist {
-  background: transparent;
-  border-bottom: 1px solid #374151;
-  display: flex;
-  gap: 10px;
-  padding: 0 10px;
-}
-
-::ng-deep .p-tab {
-  background: transparent;
-  color: #9ca3af;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px 6px 0 0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-::ng-deep .p-tab:hover,
-::ng-deep .p-tab:hover * {
-  color: #e5e7eb !important;
-}
-
-::ng-deep .p-tab.p-highlight {
-  color: #22c55e;
-  background: #111827;
-  border-bottom: 2px solid #22c55e;
-  position: relative;
-}
-
-::ng-deep .p-tab.p-highlight::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
+/* Container da Nav para centralizar e fixar no topo se desejar */
+.nav-container {
   width: 100%;
-  height: 2px;
-  background: #22c55e;
-}
-
-::ng-deep .p-tabpanels {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
   background: transparent;
-  padding: 15px;
 }
 
-.menu-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
+/* Override do TabList (A barra de fundo) */
+::ng-deep .p-tablist {
+  background: rgba(20, 20, 20, 0.7) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(188, 19, 254, 0.2) !important;
+  border-radius: 50px !important; /* Estilo pílula moderno */
+  padding: 8px 20px !important;
+  display: flex !important;
+  gap: 15px !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8) !important;
 }
 
-.menu-wrapper i {
-  cursor: pointer;
+/* Esconder a linha padrão do PrimeNG que fica embaixo */
+::ng-deep .p-tablist-content {
+    border: none !important;
 }
 
-.menu {
-  margin-left: 17px;
+/* Estilo de cada item do menu */
+::ng-deep .p-tab {
+  background: transparent !important;
+  border: none !important;
+  color: #9ca3af !important;
+  padding: 12px 24px !important;
+  border-radius: 30px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
-.theme-toggle .p-inputswitch {
-  width: 60px;
-  height: 30px;
+/* Efeito de Hover */
+::ng-deep .p-tab:not(.p-highlight):hover {
+  color: #bc13fe !important;
+  background: rgba(188, 19, 254, 0.05) !important;
 }
 
-.theme-toggle .p-inputswitch-slider:before {
-  content: "\f185"; /* sol */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fbc02d;
-  font-size: 16px;
+/* Item Ativo (Selecionado) */
+::ng-deep .p-tab.p-highlight {
+  color: #ffffff !important;
+  background: rgba(188, 19, 254, 0.2) !important;
+  box-shadow: inset 0 0 15px rgba(188, 19, 254, 0.3),
+              0 0 10px rgba(188, 19, 254, 0.2) !important;
+  border: 1px solid rgba(188, 19, 254, 0.5) !important;
 }
 
-.theme-toggle .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
-  content: "\f186"; /* lua */
-  color: #90caf9;
+/* Ícones dentro da Nav */
+::ng-deep .p-tab i {
+    font-size: 1.1rem !important;
+    transition: transform 0.3s ease;
 }
 
-.menu {
-  display: flex;
-  gap: 15px;
-  background-color: #111827;
-  border: 1px solid #111827;
-  border-radius: 6px;
-  padding: 5px 10px;
+::ng-deep .p-tab.p-highlight i {
+    transform: scale(1.2);
+    color: #bc13fe;
+}
+
+/* Área do Conteúdo (Paineis) */
+::ng-deep .p-tabpanels {
+  background: transparent !important;
+  padding-top: 2rem !important;
+  color: #fff !important;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 600px) {
+    ::ng-deep .p-tablist {
+        gap: 5px !important;
+        padding: 5px !important;
+    }
+    ::ng-deep .p-tab {
+        padding: 10px 15px !important;
+        font-size: 0.75rem !important;
+    }
+    ::ng-deep .p-tab span {
+        display: none; /* Deixa apenas ícones no mobile */
+    }
 }

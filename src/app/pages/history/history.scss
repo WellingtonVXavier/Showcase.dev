@@ -1,0 +1,78 @@
+.history-container {
+    padding: 4rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilo da Linha Central */
+::ng-deep .customized-timeline .p-timeline-event-connector {
+    background-color: rgba(188, 19, 254, 0.3) !important;
+    width: 2px !important;
+}
+
+/* O Marcador (Círculo com Ícone) */
+.custom-marker {
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(188, 19, 254, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Card de Evento */
+.event-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(188, 19, 254, 0.2);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    border-color: #bc13fe;
+}
+
+.event-status {
+    color: #bc13fe;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+}
+
+.event-date {
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+}
+
+.event-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Ajustes para Mobile */
+.event-date-mobile {
+    display: none;
+    font-size: 0.8rem;
+    color: #bc13fe;
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 960px) {
+    ::ng-deep .customized-timeline .p-timeline-event-opposite {
+        display: none;
+    }
+    .event-date-mobile {
+        display: block;
+    }
+}
+

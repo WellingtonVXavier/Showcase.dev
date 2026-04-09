@@ -1,30 +1,44 @@
-<p-tabs [(value)]="activeItem" class="card">
-  <p-tablist>
-    <p-tab class="menu" value="home">
-      <i class="pi pi-home"></i> 
-      Home
-    </p-tab>
-    <p-tab class="menu" value="sobre">
-      <i class="pi pi-info-circle"></i> 
-      Sobre
-    </p-tab>
-    <p-tab class="menu" value="projetos">
-      <i class="pi pi-briefcase"></i> 
-      Projetos
-    </p-tab>
-  </p-tablist>
-  
-  <p-tabpanels>
-    <p-tabpanel value="home">
-      <app-home></app-home>
-    </p-tabpanel>
+<div class="nav-container">
+  <p-tabs [(value)]="activeItem" class="custom-navbar">
+    <p-tablist class="nav-list">
+      <p-tab value="home" class="nav-item">
+        <i class="pi pi-home"></i> 
+        <span>Home</span>
+      </p-tab>
 
-    <p-tabpanel value="sobre">
-      <app-sobre></app-sobre>
-    </p-tabpanel>
+      <p-tab value="sobre" class="nav-item">
+        <i class="pi pi-user"></i> 
+        <span>Sobre</span>
+      </p-tab>
 
-    <p-tabpanel value="projetos">
-      <app-projects></app-projects>
-    </p-tabpanel>
-  </p-tabpanels>
-</p-tabs>
+      <p-tab value="história" class="nav-item">
+        <i class="pi pi-history"></i> 
+        <span>História</span>
+      </p-tab>
+      
+      <p-tab value="projetos" class="nav-item">
+        <i class="pi pi-code"></i> 
+        <span>Projetos</span>
+      </p-tab>
+      
+    </p-tablist>
+    
+    <p-tabpanels class="content-area">
+      <p-tabpanel value="home">
+        <app-home></app-home>
+      </p-tabpanel>
+
+      <p-tabpanel value="sobre">
+        <app-sobre></app-sobre>
+      </p-tabpanel>
+
+      <p-tabpanel value="história">
+        <app-history></app-history>
+      </p-tabpanel>
+
+      <p-tabpanel value="projetos">
+        <app-projects></app-projects>
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
+</div>

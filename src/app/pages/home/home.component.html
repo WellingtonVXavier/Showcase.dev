@@ -1,64 +1,51 @@
-<div class="container">
-    <p-card class="mb-4 header" [style]="{width: 'auto'}">
-        <div class="titulo">Sobre Mim</div>
-        <div class="sobre-container">
-            <img src="assets/wellington.png" (click)="showModal = true" alt="Minha foto" class="sobre-foto" />
+<div class="main-container">
+    <header class="hero-section">
+        <div class="nebula-glow"></div>
 
-            <div class="sobre-info">
-                <h2>Wellington Vaz Xavier</h2>
-                <p><strong>Idade:</strong> 39 anos</p>
-                <p><strong>Formação:</strong> Tecnólogo em Análise e Desenvolvimento de Sistemas — 4º semestre em andamento</p>
-                <p><strong>Cidade:</strong> São Paulo - SP</p>
-                <p><strong>Perfil Profissional:</strong> Desenvolvedor Júnior com sólida base em tecnologias web, incluindo .NET, Angular, TypeScript e SQL Server. Comprometido com aprendizado contínuo, entrega de soluções eficientes e enfrentamento de desafios técnicos.</p>
+        <div class="content-wrapper">
+            <h1>Olá, eu sou o <span>Wellington Vaz Xavier</span></h1>
+            <p class="subtitle">Desenvolvedor Júnior & Entusiasta de Tecnologia</p>
+            <p class="tagline">Unindo lógica e código, sigo criando soluções eficientes.</p>
+        </div>
+    </header> 
+
+    <section class="skills-section">
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="skill-name">C#</span>
+                <i class="devicon-csharp-plain"></i>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-name">EF Core</span>
+                <i class="devicon-dotnetcore-plain"></i>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-name">Angular</span>
+                <i class="devicon-angularjs-plain"></i>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-name">SQL Server</span>
+                <i class="devicon-microsoftsqlserver-plain"></i>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-name">HTML5</span>
+                <i class="devicon-html5-plain"></i>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-name">CSS3</span>
+                <i class="devicon-css3-plain"></i>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-name">TypeScript</span>
+                <i class="devicon-typescript-plain"></i>
             </div>
         </div>
-
-        <div class="actions">
-            <i 
-                class="pi pi-file-pdf pdf-btn" 
-                (click)="downloadPdf()" 
-                style="font-size: 1.5rem; cursor: pointer;"></i>
-
-            <i 
-                class="pi pi-github github-btn" 
-                (click)="abrirLink('https://github.com/WellingtonVXavier')" 
-                style="font-size: 1.5rem; cursor: pointer;"></i>
-
-            <i 
-                class="pi pi-linkedin linkedin-btn" 
-                (click)="abrirLink('https://www.linkedin.com/in/wellington-vaz-xavier-091809220/')" 
-                style="font-size: 1.5rem; cursor: pointer;"></i>
-        </div>
-
-        <div class="contato">
-            <span>Transforme sua ideia em um projeto digital de sucesso. Fale comigo!</span>
-            <a href="mailto:wellingtonvxavier@outlook.com" class="contact-btn">
-                <i class="pi pi-envelope"  style="color: #7f7e7e; font-size: 25px; text-transform: none;"></i>
-            </a>
-
-            <div class="actions">
-                <div>
-                    <a
-                    href="https://api.whatsapp.com/send?phone=5511919404938&text=Olá%20Lucas,%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho!"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                        <i
-                        class="pi pi-whatsapp"
-                        style="color: #25d366; font-size: 25px"
-                        pTooltip="Whatsapp"
-                        tooltipPosition="left" 
-                        ></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </p-card>
-
-    <!-- Modal foto -->
-    <div class="photo-modal" *ngIf="showModal" (click)="showModal = false">
-        <div class="modal-content" (click)="$event.stopPropagation()">
-            <img src="assets/wellington.png" alt="Minha foto grande" />
-        </div>
-    </div>
+    </section>
 </div>

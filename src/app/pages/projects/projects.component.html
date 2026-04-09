@@ -1,18 +1,25 @@
-<div class="projects-grid">
-  <div *ngFor="let project of projects" class="flex justify-content-center">
-    <p-fieldset [legend]=" project.name" [toggleable]="true">
+<div class="projects-container">
+  <div class="titulo-container">
+      <span class="glow-line"></span>
+      <h2 class="titulo-moderno">Projetos</h2>
+      <span class="glow-line"></span>
+  </div>
 
-      <p class="description">
-        {{ project.description }}
-      </p>
-
-      <div class="footer">
-        <a [href]="project.link" target="_blank" class="project-btn">
-          <i class="pi pi-globe"></i>
-          Acessar Projeto
-        </a>
-      </div>
-
-    </p-fieldset>
+  <div class="projects-grid">
+    <div *ngFor="let project of projects" class="project-wrapper">
+      <p-fieldset [legend]="project.name" [toggleable]="true">
+        <div class="project-content">
+          <p class="description">
+            {{ project.description }}
+          </p>
+          <div class="footer">
+            <a [href]="project.link" target="_blank" class="project-btn">
+              <i class="pi pi-external-link"></i>
+              <span>Ver Projeto</span>
+            </a>
+          </div>
+        </div>
+      </p-fieldset>
+    </div>
   </div>
 </div>
