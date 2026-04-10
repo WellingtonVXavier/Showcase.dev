@@ -26,7 +26,7 @@ export class History {
     { 
       status: 'Analista de Sistemas Trainee', 
       date: '04/11/2021 - 2022', 
-      icon: 'pi pi-rocket', 
+      icon: 'pi pi-briefcase', 
       color: '#4b0082',
       description: 'O início da jornada profissional. Foco em aprendizado de regras de negócio, lógica de programação e imersão no ambiente de banco de dados SQL Server.' 
     }
